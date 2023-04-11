@@ -6,5 +6,5 @@
 *.hex
 
 *.DS_Store
-*.cproject
-*.settings/
+.cproject
+.settings/
