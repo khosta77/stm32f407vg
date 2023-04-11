@@ -61,11 +61,11 @@ v1.7.0
 
 # Залитие на stm32f407vg discovery
 
-'''
+```
 $ sudo openocd -f interface/stlink.cfg -f target/stm32f4x.cfg -c \
-    "init; reset halt; flash write_image erase Debug/main.hex; "\
+    "init; reset halt; flash write_image erase ./main.hex; "\
     "reset; exit"
-'''
+```
 
 Про отладку и д. т. читать в других статьях, таких как [эта][altenativInstall] или [можно в этой][oldsiet].
 
