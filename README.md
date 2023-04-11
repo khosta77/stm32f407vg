@@ -3,7 +3,7 @@
 Идея этого пустого проекта заключается в том, что вы не зависите от среды разработки, вам нужна только Unix
 подобная система. **Важный комменатарий, код в main.cpp пример, взятый откуда-то, чтобы проверить работу платы.**
 
-![stm32f407vg discovery](images/)
+![stm32f407vg discovery](images/stm32f407vg.jpeg)
 
 # Установка
 
@@ -63,8 +63,8 @@ v1.7.0
 
 ```
 $ sudo openocd -f interface/stlink.cfg -f target/stm32f4x.cfg -c \
-    "init; reset halt; flash write_image erase ./main.hex; "\
-    "reset; exit"
+"init; reset halt; flash write_image erase main.hex; "\  
+"reset; exit"
 ```
 
 Про отладку и д. т. читать в других статьях, таких как [эта][altenativInstall] или [можно в этой][oldsiet].
