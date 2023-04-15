@@ -96,7 +96,7 @@ main.siz \
 all: main-build
 
 # Main-build Target
-main-build: main.elf secondary-outputs
+main-build: main.elf secondary-outputs clear_obj
 
 # Tool invocations
 main.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
@@ -122,6 +122,10 @@ main.siz: main.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 clean:
 	-$(RM) $(AS_DEPS)$(C_UPPER_DEPS)$(SECONDARY_SIZE)$(M_DEPS)$(CP_DEPS)$(MI_DEPS)$(C_DEPS)$(CC_DEPS)$(SX_DEPS)$(C++_DEPS)$(M_UPPER_DEPS)$(I_DEPS)$(OBJS)$(CXX_DEPS)$(SECONDARY_FLASH)$(ASM_DEPS)$(MII_DEPS)$(MM_DEPS)$(S_UPPER_DEPS)$(CPP_DEPS) main.elf
 	-@echo ' '
+
+clear_obj:
+	rm ./src/*.o
+	rm ./src/*.d
 
 secondary-outputs: $(SECONDARY_FLASH) $(SECONDARY_SIZE)
 
